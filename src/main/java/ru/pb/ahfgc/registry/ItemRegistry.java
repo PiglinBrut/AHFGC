@@ -7,9 +7,9 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import ru.pb.ahfgc.AHFGCMod;
 import ru.pb.ahfgc.util.Food;
-import ru.pb.ahfgc.util.tools.CursedHorn;
-import ru.pb.ahfgc.util.tools.HydraEssence;
-import ru.pb.ahfgc.util.tools.HydraPoison;
+import ru.pb.ahfgc.util.itemtools.CursedHorn;
+import ru.pb.ahfgc.util.itemtools.HydraEssence;
+import ru.pb.ahfgc.util.itemtools.HydraPoison;
 
 
 public class ItemRegistry {
@@ -29,7 +29,7 @@ public class ItemRegistry {
     public static final DeferredItem<Item> STATIC_BREW = ITEMS.register("static_brew", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(Food.STATIC_BREW).stacksTo(16)));
     public static final DeferredItem<Item> HYDRA_ESSENCE = ITEMS.register("hydra_essence", () -> new HydraEssence(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> DRAGON_BREW = ITEMS.register("dragon_brew", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(Food.DRAGON_BREW).stacksTo(16)));
-    public static final DeferredItem<HydraPoison> HYDRA_POISON = ITEMS.register("hydra_poison", () -> new HydraPoison(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> HYDRA_POISON = ITEMS.register("hydra_poison", () -> new HydraPoison(new Item.Properties().stacksTo(1)));
 
     // ==== Sun Eye ====
     public static final DeferredItem<Item> SUN_EYE = EYES.register("sun_eye", () -> new EREnderEye(new Item.Properties().stacksTo(1)));

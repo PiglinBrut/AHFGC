@@ -3,10 +3,12 @@ package ru.pb.ahfgc.entity.custom;
 import com.github.L_Ender.cataclysm.init.ModParticle;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
@@ -38,6 +40,27 @@ public class SunEyeItemEntity extends ItemEntity {
         this.setNoGravity(true);
     }
 
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putInt("TransformProgress", transformProgress);
+        tag.putBoolean("IsTransforming", isTransforming);
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        this.transformProgress = tag.getInt("TransformProgress");
+        this.isTransforming = tag.getBoolean("IsTransforming");
+
+        // Восстанавливаем визуальные эффекты
+        if (isTransforming) {
+            this.setNoGravity(true);
+            this.setGlowingTag(true);
+            this.setInvulnerable(true);
+        }
+    }
+
     public void startTransformation() {
         this.isTransforming = true;
         this.transformProgress = 0;
@@ -53,6 +76,7 @@ public class SunEyeItemEntity extends ItemEntity {
         // Защита от подбора и объединения
         this.setPickUpDelay(32767);
         this.setUnlimitedLifetime();
+        //this.setDeltaMovement(this.getDeltaMovement().x, 0.01, this.getDeltaMovement().z);
 
         if (!isTransforming) return;
 
@@ -184,7 +208,11 @@ public class SunEyeItemEntity extends ItemEntity {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        return false;                   // Не получает урон ни от чего
+        if (damageSources().genericKill().type() == source.type()) {
+            return super.hurt(source, amount);
+        } else {
+            return false;               // Не получает урон ни от чего, кроме команд
+        }
     }
 
     @Override
@@ -193,7 +221,7 @@ public class SunEyeItemEntity extends ItemEntity {
     }
 
     @Override
-    public boolean canCollideWith(net.minecraft.world.entity.Entity entity) {
+    public boolean canCollideWith(Entity entity) {
         return false;
     }
 

@@ -33,8 +33,9 @@ public class EntityRegistry {
 
     public static final DeferredHolder<EntityType<?>, EntityType<SunEyeItemEntity>> SUN_EYE_ITEM_ENTITY =
             ENTITIES.register("sun_eye_item", () -> Builder.<SunEyeItemEntity>of(SunEyeItemEntity::new, MobCategory.MISC)
-                            .sized(0.25F, 0.25F)
-                            .clientTrackingRange(10)
-                            .build("sun_eye_item")
+                    .sized(0.25F, 0.25F)
+                    .clientTrackingRange(10)
+                    .updateInterval(1)
+                    .build("sun_eye_item")
             );
 }

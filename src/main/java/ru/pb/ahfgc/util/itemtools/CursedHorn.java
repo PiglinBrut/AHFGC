@@ -1,4 +1,4 @@
-package ru.pb.ahfgc.util.tools;
+package ru.pb.ahfgc.util.itemtools;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;

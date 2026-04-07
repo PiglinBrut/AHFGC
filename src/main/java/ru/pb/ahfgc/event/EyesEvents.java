@@ -5,6 +5,7 @@ import com.bobmowzie.mowziesmobs.server.potion.EffectHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -63,7 +64,7 @@ public class EyesEvents {
         );
 
         // Сохраняем небольшую инерцию от броска
-        sunEyeEntity.setDeltaMovement(oldItem.getDeltaMovement());
+        sunEyeEntity.setDeltaMovement(oldItem.getDeltaMovement().scale(0.2));
 
         // Добавляем сущность в мир и удаляем старую
         level.addFreshEntity(sunEyeEntity);
@@ -86,6 +87,8 @@ public class EyesEvents {
                         .withStyle(ChatFormatting.GOLD),
                 true
         );
+
+        player.playSound(SoundEvents.FIRE_EXTINGUISH);
 
         for (int i = 0; i < 5; i++) {
             player.level().addParticle(

@@ -1,4 +1,4 @@
-package ru.pb.ahfgc.util.tools;
+package ru.pb.ahfgc.util.itemtools;
 
 import net.mcreator.borninchaosv.init.BornInChaosV1ModSounds;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -21,7 +21,7 @@ import java.util.Random;
 public class HydraEssence extends Item {
     private static final Random RANDOM = new Random();
     private static final int DRINK_DURATION = 32;
-    public static final int EFFECT_DURATION = 2000;
+    public static final int EFFECT_DURATION = 400;
     public static final int AMPLIFIER = 4;
 
     public HydraEssence(Properties properties) {
@@ -64,3 +64,4 @@ public class HydraEssence extends Item {
 //        PotionContents.addPotionTooltip(list, components::add, 1.0F, context.tickRate());
 //    }
 }
+
