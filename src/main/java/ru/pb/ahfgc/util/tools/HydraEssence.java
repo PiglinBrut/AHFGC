@@ -1,4 +1,4 @@
-package ru.pb.ahfgc.util.Tools;
+package ru.pb.ahfgc.util.tools;
 
 import net.mcreator.borninchaosv.init.BornInChaosV1ModSounds;
 import net.minecraft.advancements.CriteriaTriggers;

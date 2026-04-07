@@ -7,10 +7,9 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import ru.pb.ahfgc.AHFGCMod;
 import ru.pb.ahfgc.util.Food;
-import ru.pb.ahfgc.util.Tools.CursedHorn;
-import ru.pb.ahfgc.util.Tools.HydraEssence;
-import ru.pb.ahfgc.util.Tools.HydraPoison;
-import ru.pb.ahfgc.util.Tools.SkillManuscript;
+import ru.pb.ahfgc.util.tools.CursedHorn;
+import ru.pb.ahfgc.util.tools.HydraEssence;
+import ru.pb.ahfgc.util.tools.HydraPoison;
 
 
 public class ItemRegistry {
@@ -38,6 +37,4 @@ public class ItemRegistry {
     // ==== Cursed Eye ====
     public static final DeferredItem<Item> CURSED_HORN = ITEMS.register("cursed_horn", () -> new CursedHorn(new Item.Properties().stacksTo(1)));
 
-    // ==== Test Items ====
-    public static final DeferredItem<SkillManuscript> SKILL_MANUSCRIPT = ITEMS.register("skill_manuscript", () -> new SkillManuscript(new Item.Properties().stacksTo(64)));
 }

@@ -6,11 +6,8 @@ import io.redspace.ironsspellbooks.fluids.SimpleTintedClientFluidType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ItemEntityRenderer;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -48,10 +45,6 @@ public class AHFGCMod {
         EntityRegistry.register(modEventBus);
 
         SpellRegistry.register(modEventBus);
-
-        //EyesEvents.LivingEntityUseItem((LivingEntityUseItemEvent) modEventBus);
-
-        //modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
