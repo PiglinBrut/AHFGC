@@ -1,0 +1,14 @@
+{
+  "type": "irons_spellbooks:alchemist_cauldron_fill",
+  "fluid": {
+    "amount": 250,
+    "id": "ahfgc:hydra_poison"
+  },
+  "input": {
+    "item": "ahfgc:hydra_poison"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}

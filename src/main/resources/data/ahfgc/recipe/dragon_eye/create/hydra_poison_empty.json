@@ -1,0 +1,17 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "iceandfire:hydra_fang"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:bone_meal"
+    },
+    {
+      "amount": 250,
+      "id": "ahfgc:hydra_poison"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "ahfgc:hydra_poison"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:bottle"
+    },
+    {
+      "amount": 250,
+      "id": "ahfgc:hydra_poison"
+    }
+  ]
+}

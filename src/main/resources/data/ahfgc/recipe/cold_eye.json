@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "SCS",
+    "IBI"
+  ],
+  "key": {
+    "B": {
+      "item": "born_in_chaos_v1:permafrost_shard"
+    },
+    "C": {
+      "item": "mowziesmobs:ice_crystal"
+    },
+    "I": {
+      "item": "minecraft:blue_ice"
+    },
+    "S": {
+      "item": "irons_spellbooks:permafrost_shard"
+    }
+  },
+  "result": {
+    "id": "endrem:cold_eye"
+  }
+}

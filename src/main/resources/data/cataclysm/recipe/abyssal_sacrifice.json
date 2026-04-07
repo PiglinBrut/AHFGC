@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "create:upgrade_aquatic/coral"
+        },
+        {
+            "item": "cataclysm:athame"
+        },
+        {
+            "tag": "cataclysm:sacrifice_ingredients"
+        },
+        {
+            "item": "alexsmobs:lost_tentacle"
+        },
+        {
+            "item": "minecraft:conduit"
+        },
+        {
+            "item": "alexsmobs:lost_tentacle"
+        },
+        {
+            "item": "minecraft:diamond_block"
+        },
+        {
+            "item": "minecraft:amethyst_block"
+        },
+        {
+            "item": "minecraft:gold_block"
+        }
+    ],
+    "result": {
+        "item": "cataclysm:abyssal_sacrifice",
+        "count": 1
+    }
+}

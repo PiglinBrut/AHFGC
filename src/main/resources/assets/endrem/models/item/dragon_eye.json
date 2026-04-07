@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "endrem:item/dragon_eye",
+    "layer1": "endrem:item/dragon_eyeball"
+  }
+}

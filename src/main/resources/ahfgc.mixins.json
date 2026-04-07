@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ahfgc.entity.armor",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "yourmod.refmap.json",
+  "client": [
+    "HumanoidArmorLayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

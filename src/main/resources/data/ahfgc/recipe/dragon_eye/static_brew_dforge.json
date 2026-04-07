@@ -1,0 +1,14 @@
+{
+  "type": "iceandfire:dragonforge",
+  "dragonType": "lightning",
+  "cookTime": 1000,
+  "input": {
+    "item": "iceandfire:lightning_dragon_heart"
+  },
+  "blood": {
+    "item": "iceandfire:lightning_stew"
+  },
+  "result": {
+    "id": "ahfgc:static_brew"
+  }
+}

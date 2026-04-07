@@ -1,0 +1,14 @@
+{
+  "type": "iceandfire:dragonforge",
+  "dragonType": "ice",
+  "cookTime": 1000,
+  "input": {
+    "item": "iceandfire:ice_dragon_heart"
+  },
+  "blood": {
+    "item": "iceandfire:frost_stew"
+  },
+  "result": {
+    "id": "ahfgc:cold_brew"
+  }
+}

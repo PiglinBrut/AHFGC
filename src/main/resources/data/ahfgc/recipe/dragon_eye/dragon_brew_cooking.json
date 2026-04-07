@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 1200,
+  "experience": 5.0,
+  "ingredients": [
+    {
+      "item": "ahfgc:burning_brew"
+    },
+    {
+      "item": "ahfgc:cold_brew"
+    },
+    {
+      "item": "ahfgc:static_brew"
+    },
+    {
+      "item": "ahfgc:hydra_essence"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "ahfgc:dragon_brew"
+  }
+}

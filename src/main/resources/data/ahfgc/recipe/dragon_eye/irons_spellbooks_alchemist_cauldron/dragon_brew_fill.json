@@ -1,0 +1,14 @@
+{
+  "type": "irons_spellbooks:alchemist_cauldron_fill",
+  "fluid": {
+    "amount": 250,
+    "id": "ahfgc:dragon_brew"
+  },
+  "input": {
+    "item": "ahfgc:dragon_brew"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BCB",
+    "ICI",
+    "BCB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:nether_brick"
+    },
+    "C": {
+      "item": "cataclysm:lava_power_cell"
+    },
+    "I": {
+      "item": "cataclysm:ignitium_ingot"
+    }
+  },
+  "result": {
+    "id": "endrem:nether_eye"
+  }
+}
