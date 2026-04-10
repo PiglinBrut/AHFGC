@@ -14,7 +14,7 @@ public class CursedEyeModel extends GeoModel<CursedEyeEntity> {
 
     @Override
     public ResourceLocation getTextureResource(CursedEyeEntity cursedEye) {
-        return ResourceLocation.fromNamespaceAndPath("ahfgc", "textures/entity/cursed_eye.png");
+        return ResourceLocation.fromNamespaceAndPath("ahfgc", "textures/entity/cursed_portal.png");
     }
 
     @Override

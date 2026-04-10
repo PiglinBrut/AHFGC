@@ -4,27 +4,56 @@
 		{
 			"description": {
 				"identifier": "geometry.unknown",
-				"texture_width": 256,
-				"texture_height": 256,
+				"texture_width": 128,
+				"texture_height": 128,
 				"visible_bounds_width": 4,
 				"visible_bounds_height": 2.5,
 				"visible_bounds_offset": [0, 0.75, 0]
 			},
 			"bones": [
 				{
-					"name": "eye",
-					"pivot": [0, 0, 0],
+					"name": "portal",
+					"pivot": [0, 8, 0],
+					"rotation": [90, 0, 0]
+				},
+				{
+					"name": "cloud4",
+					"parent": "portal",
+					"pivot": [0, 8, -2],
 					"cubes": [
-						{"origin": [-8, 0, -8], "size": [16, 5, 16], "uv": [0, 22]}
+						{"origin": [-16, -8, -2], "size": [32, 32, 0], "pivot": [0, 8, -2], "rotation": [0, 0, -90], "uv": [0, 0]}
 					]
 				},
 				{
-					"name": "pupil",
-					"parent": "eye",
-					"pivot": [0, 0, 0],
+					"name": "cloud3",
+					"parent": "portal",
+					"pivot": [0, 8, -1],
 					"cubes": [
-						{"origin": [-3, -0.01, -3], "size": [6, 1, 6], "uv": [64, 24]},
-						{"origin": [-2, -0.1, -1], "size": [4, 2, 2], "uv": [64, 31]}
+						{"origin": [-16, -8, -1], "size": [32, 32, 0], "pivot": [0, 8, -1], "rotation": [0, 0, -67.5], "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "cloud2",
+					"parent": "portal",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{"origin": [-16, -8, 0], "size": [32, 32, 0], "pivot": [0, 8, 0], "rotation": [0, 0, -45], "uv": [0, 64]}
+					]
+				},
+				{
+					"name": "wormhole",
+					"parent": "portal",
+					"pivot": [0, 8, 1],
+					"cubes": [
+						{"origin": [-16, -8, 1], "size": [32, 32, 0], "pivot": [0, 8, 1], "rotation": [0, 0, -22.5], "uv": [64, 32]}
+					]
+				},
+				{
+					"name": "cloud1",
+					"parent": "portal",
+					"pivot": [0, 8, 2],
+					"cubes": [
+						{"origin": [-16, -8, 2], "size": [32, 32, 0], "pivot": [0, 8, 2], "rotation": [0, 0, -112.5], "uv": [64, 0]}
 					]
 				}
 			]

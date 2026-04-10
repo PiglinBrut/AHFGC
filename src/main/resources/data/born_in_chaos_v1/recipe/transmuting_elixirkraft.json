@@ -18,7 +18,7 @@
       "item": "minecraft:diamond"
     },
     {
-      "item": "minecraft:scute"
+      "item": "minecraft:turtle_scute"
     },
     {
       "item": "born_in_chaos_v1:holiday_candy"
@@ -31,7 +31,7 @@
     }
   ],
   "result": {
-    "item": "born_in_chaos_v1:transmuting_elixir",
+    "id": "born_in_chaos_v1:transmuting_elixir",
     "count": 1
   }
 }

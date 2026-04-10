@@ -22,6 +22,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 import ru.pb.ahfgc.entity.custom.CursedEyeRenderer;
+import ru.pb.ahfgc.entity.custom.SunEyeRenderer;
 import ru.pb.ahfgc.entity.spells.dread_land_portal.DreadLandPortalRenderer;
 import ru.pb.ahfgc.registry.*;
 
@@ -94,7 +95,7 @@ public class AHFGCMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(EntityRegistry.DREAD_LAND_PORTAL.get(), DreadLandPortalRenderer::new);
             EntityRenderers.register(EntityRegistry.CURSED_EYE.get(), CursedEyeRenderer::new);
-            EntityRenderers.register(EntityRegistry.SUN_EYE_ITEM_ENTITY.get(), ItemEntityRenderer::new);
+            EntityRenderers.register(EntityRegistry.SUN_EYE_ITEM_ENTITY.get(), SunEyeRenderer::new);
         }
 
 //        @SubscribeEvent

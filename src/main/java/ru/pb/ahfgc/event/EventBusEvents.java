@@ -18,6 +18,6 @@ public class EventBusEvents {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(EntityRegistry.CURSED_EYE.get(), CursedEyeEntity.createAttributes().build());
+//        event.put(EntityRegistry.CURSED_EYE.get(), CursedEyeEntity.createAttributes().build());
     }
 }
