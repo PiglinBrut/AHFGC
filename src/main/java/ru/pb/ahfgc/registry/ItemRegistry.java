@@ -24,6 +24,7 @@ public class ItemRegistry {
     public static final DeferredItem<Item> ESSENCE_OF_THE_SEA = ITEMS.register("essence_of_the_sea", () -> new Item(new Item.Properties().stacksTo(64)));
 
     // ==== Dragon Eye ====
+    public static final DeferredItem<Item> DRAGON_EYE = EYES.register("dragon_eye", () -> new EREnderEye(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> BURNING_BREW = ITEMS.register("burning_brew", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(Food.BURNING_BREW).stacksTo(16)));
     public static final DeferredItem<Item> COLD_BREW = ITEMS.register("cold_brew", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(Food.COLD_BREW).stacksTo(16)));
     public static final DeferredItem<Item> STATIC_BREW = ITEMS.register("static_brew", () -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(Food.STATIC_BREW).stacksTo(16)));
@@ -37,4 +38,12 @@ public class ItemRegistry {
     // ==== Cursed Eye ====
     public static final DeferredItem<Item> CURSED_HORN = ITEMS.register("cursed_horn", () -> new CursedHorn(new Item.Properties().stacksTo(1)));
 
+    // ==== Pumpkin Eye ====
+    public static final DeferredItem<Item> PUMPKIN_EYE = EYES.register("pumpkin_eye", () -> new EREnderEye(new Item.Properties().stacksTo(1)));
+
+    // ==== Life Eye ====
+    public static final DeferredItem<Item> LIFE_EYE = EYES.register("life_eye", () -> new EREnderEye(new Item.Properties().stacksTo(1)));
+
+    // ==== Power Eye ====
+    public static final DeferredItem<Item> POWER_EYE = EYES.register("power_eye", () -> new EREnderEye(new Item.Properties().stacksTo(1)));
 }

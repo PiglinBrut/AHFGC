@@ -1,0 +1,29 @@
+{
+  "item.ahfgc.essence_of_the_sea": "Морская сущность",
+  "item.ahfgc.burning_brew": "Пылающее варево",
+  "item.ahfgc.cold_brew": "Ледяное варево",
+  "item.ahfgc.static_brew": "Варево статики",
+  "item.ahfgc.dragon_brew": "Драконье варево",
+  "item.ahfgc.hydra_essence": "Эссенция гидры",
+  "item.ahfgc.hydra_poison": "Яд гидры",
+  "item.ahfgc.cursed_horn": "Проклятый рог",
+
+  "item.endrem.dragon_eye": "Око Дракона",
+  "item.endrem.sun_eye": "Око Солнца",
+  "item.endrem.pumpkin_eye": "Тыквенное око",
+  "item.endrem.life_eye": "Око Жизни",
+  "item.endrem.power_eye": "Око Силы",
+
+  "entity.ahfgc.dread_land_portal": "Портал в Земли Страха",
+  "entity.ahfgc.cursed_eye": "Проклятое око",
+  "entity.ahfgc.sun_eye": "Око Солнца",
+
+  "fluid.ahfgc.dragon_brew": "Драконье варево",
+  "fluid.ahfgc.hydra_essence": "Эссенция гидры",
+  "fluid.ahfgc.hydra_poison": "Яд гидры",
+
+  "itemGroup.ahfgc.main": "AHFGC Мод",
+
+  "spell.ahfgc.permafrost_gate": "Врата вечной мерзлоты",
+  "spell.ahfgc.permafrost_gate.description": "Открывает врата в замёрзшее царство, обрушивая на врагов опустошительную бурю льда и мороза."
+}

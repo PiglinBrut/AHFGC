@@ -42,7 +42,7 @@ public class SunEyeEntity extends Entity {
     }
 
     public SunEyeEntity(Level level, double x, double y, double z) {
-        this(EntityRegistry.SUN_EYE_ITEM_ENTITY.get(), level);
+        this(EntityRegistry.SUN_EYE.get(), level);
         this.setPos(x, y, z);
     }
 

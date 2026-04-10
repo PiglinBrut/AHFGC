@@ -95,7 +95,7 @@ public class AHFGCMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(EntityRegistry.DREAD_LAND_PORTAL.get(), DreadLandPortalRenderer::new);
             EntityRenderers.register(EntityRegistry.CURSED_EYE.get(), CursedEyeRenderer::new);
-            EntityRenderers.register(EntityRegistry.SUN_EYE_ITEM_ENTITY.get(), SunEyeRenderer::new);
+            EntityRenderers.register(EntityRegistry.SUN_EYE.get(), SunEyeRenderer::new);
         }
 
 //        @SubscribeEvent

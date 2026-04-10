@@ -29,11 +29,11 @@ public class EntityRegistry {
                     .clientTrackingRange(64)
                     .build("cursed_eye"));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<SunEyeEntity>> SUN_EYE_ITEM_ENTITY =
-            ENTITIES.register("sun_eye_item", () -> Builder.<SunEyeEntity>of(SunEyeEntity::new, MobCategory.MISC)
+    public static final DeferredHolder<EntityType<?>, EntityType<SunEyeEntity>> SUN_EYE =
+            ENTITIES.register("sun_eye", () -> Builder.<SunEyeEntity>of(SunEyeEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(10)
                     .updateInterval(1)
-                    .build("sun_eye_item")
+                    .build("sun_eye")
             );
 }

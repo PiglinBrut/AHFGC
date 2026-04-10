@@ -1,31 +1,29 @@
 {
-  "item.ahfgc.test_fluid_bucket": "Bucket of test liquid",
   "item.ahfgc.essence_of_the_sea": "Essence of the Sea",
-  "item.ahfgc.burning_brew": "Burning brew",
-  "item.ahfgc.cold_brew": "Cold brew",
-  "item.ahfgc.static_brew": "Static brew",
-  "item.ahfgc.dragon_brew": "Dragon brew",
-  "item.ahfgc.hydra_essence": "Hydra essence",
-  "item.ahfgc.hydra_poison": "Hydra poison",
-  "item.ahfgc.cursed_horn": "Cursed horn",
-  "item.ahfgc.shadowwalker_spawn_egg": "Shadowwalker spawn egg",
-  "item.ahfgc.earthquake_hammer": "Earthquake hammer",
+  "item.ahfgc.burning_brew": "Burning Brew",
+  "item.ahfgc.cold_brew": "Cold Brew",
+  "item.ahfgc.static_brew": "Static Brew",
+  "item.ahfgc.dragon_brew": "Dragon Brew",
+  "item.ahfgc.hydra_essence": "Hydra Essence",
+  "item.ahfgc.hydra_poison": "Hydra Poison",
+  "item.ahfgc.cursed_horn": "Cursed Horn",
 
-  "block.ahfgc.test_fluid_block": "Test liquid",
+  "item.endrem.dragon_eye": "Dragon Eye",
+  "item.endrem.sun_eye": "Sun Eye",
+  "item.endrem.pumpkin_eye": "Pumpkin Eye",
+  "item.endrem.life_eye": "Life Eye",
+  "item.endrem.power_eye": "Power Eye",
 
-  "entity.ahfgc.shadowwalker": "Shadowwalker",
-  "entity.ahfgc.summoned_enderman": "Summoned enderman",
-  "entity.ahfgc.dread_land_portal": "Dread land portal",
-  "entity.ahfgc.cursed_eye": "Cursed eye",
+  "entity.ahfgc.dread_land_portal": "Dread Land Portal",
+  "entity.ahfgc.cursed_eye": "Cursed Eye",
+  "entity.ahfgc.sun_eye": "Sun Eye",
 
-  "fluid_type.ahfgc.dragon_brew": "Dragon brew",
-  "fluid_type.ahfgc.burning_brew": "Burning brew",
-  "fluid_type.ahfgc.cold_brew": "Cold brew",
-  "fluid_type.ahfgc.static_brew": "Static brew",
-  "fluid_type.ahfgc.hydra_essence": "Hydra essence",
-  "fluid_type.ahfgc.hydra_poison": "Hydra poison",
-  "fluid_type.ahfgc.test_fluid": "Test liquid",
+  "fluid.ahfgc.dragon_brew": "Dragon Brew",
+  "fluid.ahfgc.hydra_essence": "Hydra Essence",
+  "fluid.ahfgc.hydra_poison": "Hydra Poison",
 
-  "spell.ahfgc.permafrost_gate": "Permafrost gate",
-  "spell.ahfgc.summon_enderman": "Summon enderman"
+  "itemGroup.ahfgc.main": "AHFGC Mod",
+
+  "spell.ahfgc.permafrost_gate": "Permafrost Gate",
+  "spell.ahfgc.permafrost_gate.description": "Opens a gate to the frozen realm, unleashing a devastating storm of ice and frost upon your enemies."
 }
