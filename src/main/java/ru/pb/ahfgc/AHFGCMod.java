@@ -4,10 +4,11 @@ import com.mojang.logging.LogUtils;
 import com.teamremastered.endrem.registry.ERTabs;
 import io.redspace.ironsspellbooks.fluids.SimpleTintedClientFluidType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ItemEntityRenderer;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,14 +17,17 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
-import ru.pb.ahfgc.entity.custom.CursedEyeRenderer;
-import ru.pb.ahfgc.entity.custom.SunEyeRenderer;
-import ru.pb.ahfgc.entity.spells.dread_land_portal.DreadLandPortalRenderer;
+import ru.pb.ahfgc.client.ModelLayers;
+import ru.pb.ahfgc.client.model.LibraryDoorModel;
+import ru.pb.ahfgc.client.render.CursedEyeRenderer;
+import ru.pb.ahfgc.client.render.LibraryDoorRenderer;
+import ru.pb.ahfgc.client.render.SunEyeRenderer;
 import ru.pb.ahfgc.registry.*;
 
 @Mod(AHFGCMod.MOD_ID)
@@ -37,47 +41,62 @@ public class AHFGCMod {
 
         modEventBus.addListener(this::addCreative);
 
+        BlockRegistry.register(modEventBus);
+
         ItemRegistry.register(modEventBus);
 
         FluidRegistry.register(modEventBus);
 
-        BlockRegistry.register(modEventBus);
-
         EntityRegistry.register(modEventBus);
-
-        SpellRegistry.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
+    private void insertAfterItem(BuildCreativeModeTabContentsEvent event, Object existingEntry, Item newEntry) {
+        if (existingEntry instanceof String) {
+            event.insertAfter(
+                    new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse((String) existingEntry))),
+                    newEntry.getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+        } else if (existingEntry instanceof ItemLike) {
+            event.insertAfter(
+                    new ItemStack((ItemLike) existingEntry),
+                    newEntry.getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+        }
+    }
+
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == ERTabs.EYES_TAB) {
-            event.accept(ItemRegistry.BURNING_BREW);
-            event.accept(ItemRegistry.COLD_BREW);
-            event.accept(ItemRegistry.STATIC_BREW);
-            event.accept(ItemRegistry.HYDRA_POISON);
-            event.accept(ItemRegistry.HYDRA_ESSENCE);
-            event.accept(ItemRegistry.DRAGON_BREW);
-            event.accept(ItemRegistry.CURSED_HORN);
-            event.accept(ItemRegistry.ESSENCE_OF_THE_SEA);
+
+        if(event.getTab() == ERTabs.EYES_TAB.get()) {
+            this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.BURNING_BREW.get());
+            this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.COLD_BREW.get());
+            this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.STATIC_BREW.get());
+            this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.HYDRA_POISON.get());
+            this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.HYDRA_ESSENCE.get());
+            this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.DRAGON_BREW.get());
+            this.insertAfterItem(event,"endrem:cursed_eye", ItemRegistry.CURSED_HORN.get());
+            this.insertAfterItem(event,"endrem:exotic_eye", ItemRegistry.ESSENCE_OF_THE_SEA.get());
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ItemRegistry.BURNING_BREW);
-            event.accept(ItemRegistry.COLD_BREW);
-            event.accept(ItemRegistry.STATIC_BREW);
-            event.accept(ItemRegistry.HYDRA_POISON);
-            event.accept(ItemRegistry.HYDRA_ESSENCE);
-            event.accept(ItemRegistry.DRAGON_BREW);
+            this.insertAfterItem(event,Items.RABBIT_STEW, ItemRegistry.BURNING_BREW.get());
+            this.insertAfterItem(event,Items.RABBIT_STEW, ItemRegistry.COLD_BREW.get());
+            this.insertAfterItem(event,Items.RABBIT_STEW, ItemRegistry.STATIC_BREW.get());
+            this.insertAfterItem(event,Items.RABBIT_STEW, ItemRegistry.DRAGON_BREW.get());
+            this.insertAfterItem(event,Items.HONEY_BOTTLE, ItemRegistry.HYDRA_POISON.get());
+            this.insertAfterItem(event,Items.HONEY_BOTTLE, ItemRegistry.HYDRA_ESSENCE.get());
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ItemRegistry.CURSED_HORN);
+            this.insertAfterItem(event,Items.TNT_MINECART, ItemRegistry.CURSED_HORN.get());
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ItemRegistry.ESSENCE_OF_THE_SEA);
+            this.insertAfterItem(event,Items.HEART_OF_THE_SEA, ItemRegistry.ESSENCE_OF_THE_SEA.get());
         }
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
         }
@@ -93,22 +112,10 @@ public class AHFGCMod {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            EntityRenderers.register(EntityRegistry.DREAD_LAND_PORTAL.get(), DreadLandPortalRenderer::new);
-            EntityRenderers.register(EntityRegistry.CURSED_EYE.get(), CursedEyeRenderer::new);
-            EntityRenderers.register(EntityRegistry.SUN_EYE.get(), SunEyeRenderer::new);
-        }
-
-//        @SubscribeEvent
-//        public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
-//        }
-    }
-    @EventBusSubscriber(
-            modid = "ahfgc",
-            bus = EventBusSubscriber.Bus.MOD,
-            value = {Dist.CLIENT}
-    )
-    public class ClientSetup {
-        public ClientSetup() {
+            event.enqueueWork(() -> {
+                EntityRenderers.register(EntityRegistry.CURSED_EYE.get(), CursedEyeRenderer::new);
+                EntityRenderers.register(EntityRegistry.SUN_EYE.get(), SunEyeRenderer::new);
+            });
         }
 
         @SubscribeEvent
