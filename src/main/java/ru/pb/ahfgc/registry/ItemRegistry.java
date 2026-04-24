@@ -10,6 +10,7 @@ import ru.pb.ahfgc.util.Food;
 import ru.pb.ahfgc.util.itemtools.CursedHorn;
 import ru.pb.ahfgc.util.itemtools.HydraEssence;
 import ru.pb.ahfgc.util.itemtools.HydraPoison;
+import ru.pb.ahfgc.util.itemtools.LibraryDoorItem;
 
 
 public class ItemRegistry {
@@ -46,4 +47,9 @@ public class ItemRegistry {
 
     // ==== Power Eye ====
     public static final DeferredItem<Item> POWER_EYE = EYES.register("power_eye", () -> new EREnderEye(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<LibraryDoorItem> LIBRARY_DOOR =
+            ITEMS.registerItem("library_door",
+                    props -> new LibraryDoorItem(BlockRegistry.LIBRARY_DOOR.get(), props),
+                    new Item.Properties().stacksTo(64)
+            );
 }

@@ -1,7 +1,8 @@
-package ru.pb.ahfgc.entity.custom;
+package ru.pb.ahfgc.client.render;
 
-import io.redspace.ironsspellbooks.entity.mobs.abstract_spell_casting_mob.AbstractSpellCastingMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import ru.pb.ahfgc.client.model.SculkRemnantModel;
+import ru.pb.ahfgc.entity.custom.SculkRemnantEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class SculkRemnantRenderer extends GeoEntityRenderer<SculkRemnantEntity> {

@@ -1,6 +1,7 @@
-package ru.pb.ahfgc.entity.custom;
+package ru.pb.ahfgc.client.model;
 
 import net.minecraft.resources.ResourceLocation;
+import ru.pb.ahfgc.entity.custom.SculkRemnantEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class SculkRemnantModel extends GeoModel<SculkRemnantEntity> {

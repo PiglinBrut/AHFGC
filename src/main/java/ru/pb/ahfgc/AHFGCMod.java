@@ -23,8 +23,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
-import ru.pb.ahfgc.client.ModelLayers;
-import ru.pb.ahfgc.client.model.LibraryDoorModel;
 import ru.pb.ahfgc.client.render.CursedEyeRenderer;
 import ru.pb.ahfgc.client.render.LibraryDoorRenderer;
 import ru.pb.ahfgc.client.render.SunEyeRenderer;
@@ -55,23 +53,45 @@ public class AHFGCMod {
     }
 
     private void insertAfterItem(BuildCreativeModeTabContentsEvent event, Object existingEntry, Item newEntry) {
-        if (existingEntry instanceof String) {
-            event.insertAfter(
-                    new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse((String) existingEntry))),
-                    newEntry.getDefaultInstance(),
-                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
-            );
-        } else if (existingEntry instanceof ItemLike) {
-            event.insertAfter(
-                    new ItemStack((ItemLike) existingEntry),
-                    newEntry.getDefaultInstance(),
-                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
-            );
+        if (!event.getTab().getDisplayName().getString().contains("Search")) {
+            try {
+                boolean targetExists = false;
+                Item targetItem = null;
+
+                if (existingEntry instanceof String) {
+                    String itemId = (String) existingEntry;
+                    if (BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemId))) {
+                        targetItem = BuiltInRegistries.ITEM.get(ResourceLocation.parse(itemId));
+                    }
+                } else if (existingEntry instanceof ItemLike) {
+                    targetItem = ((ItemLike) existingEntry).asItem();
+                }
+
+                if (targetItem != null) {
+                    for (ItemStack existingStack : event.getParentEntries()) {
+                        if (existingStack.getItem() == targetItem) {
+                            targetExists = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (targetExists && targetItem != null) {
+                    event.insertAfter(
+                            new ItemStack(targetItem),
+                            newEntry.getDefaultInstance(),
+                            CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+                    );
+                } else {
+                    event.accept(newEntry);
+                }
+            } catch (Exception e) {
+                event.accept(newEntry);
+            }
         }
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
         if(event.getTab() == ERTabs.EYES_TAB.get()) {
             this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.BURNING_BREW.get());
             this.insertAfterItem(event,"endrem:dragon_eye", ItemRegistry.COLD_BREW.get());
@@ -109,6 +129,11 @@ public class AHFGCMod {
 
     @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+
+        @SubscribeEvent
+        public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(EntityRegistry.LIBRARY_DOOR.get(), LibraryDoorRenderer::new);
+        }
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

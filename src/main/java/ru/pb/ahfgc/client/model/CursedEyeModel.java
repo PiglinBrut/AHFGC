@@ -1,6 +1,7 @@
-package ru.pb.ahfgc.entity.custom;
+package ru.pb.ahfgc.client.model;
 
 import net.minecraft.resources.ResourceLocation;
+import ru.pb.ahfgc.entity.custom.CursedEyeEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class CursedEyeModel extends GeoModel<CursedEyeEntity> {
