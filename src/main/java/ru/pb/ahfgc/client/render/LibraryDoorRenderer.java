@@ -9,11 +9,14 @@ import net.minecraft.world.phys.AABB;
 import ru.pb.ahfgc.block.LibraryDoorBlock;
 import ru.pb.ahfgc.block.block_entity.LibraryDoorBlockEntity;
 import ru.pb.ahfgc.client.model.LibraryDoorModel;
+import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
 public class LibraryDoorRenderer extends GeoBlockRenderer<LibraryDoorBlockEntity> {
+    private static final GeoModel<LibraryDoorBlockEntity> MODEL = new LibraryDoorModel();
+
     public LibraryDoorRenderer(BlockEntityRendererProvider.Context context) {
-        super(new LibraryDoorModel());
+        super(MODEL);
     }
 
     public boolean shouldRender(LibraryDoorBlockEntity blockEntity, BlockState blockState) {

@@ -6,10 +6,12 @@ import ru.pb.ahfgc.block.block_entity.LibraryDoorBlockEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class LibraryDoorModel extends GeoModel<LibraryDoorBlockEntity> {
+    private static final ResourceLocation MODEL_PATH =
+            ResourceLocation.fromNamespaceAndPath(AHFGCMod.MOD_ID, "geo/library_door.geo.json");
 
     @Override
     public ResourceLocation getModelResource(LibraryDoorBlockEntity animatable) {
-        return ResourceLocation.fromNamespaceAndPath(AHFGCMod.MOD_ID, "geo/library_door.geo.json");
+        return MODEL_PATH;
     }
 
     @Override

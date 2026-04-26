@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SMS",
+    "CEL",
+    "SPS"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "S": {
+      "item": "create:steam_engine"
+    },
+    "M": {
+      "item": "mowziesmobs:umvuthana_mask_fury"
+    },
+    "P": {
+      "item": "born_in_chaos_v1:charmof_power"
+    },
+    "C": {
+      "item": "irons_spellbooks:energized_core"
+    },
+    "L": {
+      "item": "cataclysm:lava_power_cell"
+    }
+  },
+  "result": {
+    "id": "endrem:power_eye"
+  }
+}

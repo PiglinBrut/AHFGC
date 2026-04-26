@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "CGC",
+    " C "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:goat_horn"
+    },
+    "C": {
+      "item": "cataclysm:cursium_ingot"
+    }
+  },
+  "result": {
+    "id": "ahfgc:cursed_horn"
+  }
+}

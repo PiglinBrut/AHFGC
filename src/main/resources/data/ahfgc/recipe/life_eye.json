@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GSG",
+    "OEO",
+    "PMP"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "S": {
+      "item": "minecraft:spore_blossom"
+    },
+    "G": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "O": {
+      "item": "irons_spellbooks:nature_upgrade_orb"
+    },
+    "P": {
+      "item": "irons_spellbooks:greater_healing_potion"
+    },
+    "M": {
+      "item": "mowziesmobs:umvuthana_mask_faith"
+    }
+  },
+  "result": {
+    "id": "endrem:life_eye"
+  }
+}

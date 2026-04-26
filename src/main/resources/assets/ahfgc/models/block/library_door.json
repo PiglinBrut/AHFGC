@@ -1,0 +1,7 @@
+{
+  "render_type": "translucent",
+  "ambientocclusion": true,
+  "textures": {
+    "particle": "create:block/palettes/stone_types/scorchia"
+  }
+}
